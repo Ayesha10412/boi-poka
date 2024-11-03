@@ -21,4 +21,31 @@ const storedListStr = JSON.stringify(storedList)
 localStorage.setItem('read-list', storedListStr)
     }
 }
-export {addToStoredReadList} 
+
+// const getStoredWishList = ()=>{
+//     const storedWishListStr = localStorage.getItem('wish-list')
+//     if(storedWishListStr){
+//         const storedList = JSON.parse(storedWishListStr);
+//         return storedWishList
+//     }
+//     else{
+//         return []
+//     }
+    
+//     };
+    
+//     const addToStoredWishList = (id)=>{
+//         const storedWishList = getStoredWishList();
+//         if(storedWishList.includes(id)){
+//             console.log("Already exist")
+//         }
+//         else{
+//             storedWishList.push(id)
+//     const storedWishListStr = JSON.stringify(storedWishList)
+//     localStorage.setItem('wish-list', storedWishListStr)
+//         }
+//     }
+
+
+
+export {addToStoredReadList,getStoredReadList} 
