@@ -1,9 +1,12 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 const NavBar = () => {
 
     const links = <>
-    <button className='border-2 border-green-500 btn bg-white text-sm text-green-600'>Home</button>
+    <button className='border-2 border-green-500 btn bg-white text-sm
+     text-green-600'> 
+     <NavLink to="/">Home</NavLink> </button>
        <li><a>Listed Books</a></li>
         <li><a>Pages to Read</a></li>
     
