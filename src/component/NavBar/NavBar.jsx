@@ -8,7 +8,7 @@ const NavBar = () => {
     <button className='border-2 border-green-500 btn bg-white text-sm
      text-green-600'> 
      <NavLink to="/">Home</NavLink> </button>
-       <li><ListedBooks to="/listedBooks">Listed Books</ListedBooks></li>
+     <li><NavLink to="/listedBooks">Listed Books</NavLink></li>
         <li><a>Pages to Read</a></li>
     
     

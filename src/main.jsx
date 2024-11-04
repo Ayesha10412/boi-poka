@@ -1,6 +1,6 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import './index.css'
+
 import App from './App.jsx'
 
 
@@ -8,6 +8,8 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
+import './index.css'
+
 
 import Root from './component/Root/Root.jsx';
 import ErrorPage from './component/ErrorPage/ErrorPage.jsx';
@@ -15,7 +17,8 @@ import Home from './component/Home/Home.jsx';
 import Dashboard from './component/Dashboard/Dashboard.jsx';
 import BookDetail from './component/BookDetail/BookDetail.jsx';
 import ListedBooks from './component/ListedBooks/ListedBooks.jsx';
-
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const router = createBrowserRouter([
   {
@@ -32,14 +35,16 @@ const router = createBrowserRouter([
       {
         path: "books/:bookId",
         element: <BookDetail></BookDetail>,
-        loader: ()=> fetch('booksData.json')
+        loader: ()=> fetch('../booksData.json'),
       },
-{
+
+     {
   path: 'listedBooks',
   element: <ListedBooks></ListedBooks>,
-  loader: ()=> fetch('/booksData.json'),
+  loader: () => fetch('/booksData.json')  
 
-},
+
+     },
 {
   path: 'dashboard',
   element: <Dashboard></Dashboard>
@@ -53,5 +58,6 @@ const router = createBrowserRouter([
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <RouterProvider router={router} />
+    <ToastContainer />
   </StrictMode>,
 )

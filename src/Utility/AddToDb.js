@@ -1,11 +1,12 @@
+import { toast } from "react-toastify";
 const getStoredReadList = ()=>{
-const storedListStr = localStorage.getItem('read-list')
+const storedListStr = localStorage.getItem('read-list');
 if(storedListStr){
     const storedList = JSON.parse(storedListStr);
-    return storedList
+    return storedList;
 }
 else{
-    return []
+    return [];
 }
 
 }
@@ -19,32 +20,11 @@ const addToStoredReadList = (id)=>{
         storedList.push(id)
 const storedListStr = JSON.stringify(storedList)
 localStorage.setItem('read-list', storedListStr)
+// ideally trigger toast from the component
+toast('This Books is added to your read list.')
     }
-}
+};
 
-// const getStoredWishList = ()=>{
-//     const storedWishListStr = localStorage.getItem('wish-list')
-//     if(storedWishListStr){
-//         const storedList = JSON.parse(storedWishListStr);
-//         return storedWishList
-//     }
-//     else{
-//         return []
-//     }
-    
-//     };
-    
-//     const addToStoredWishList = (id)=>{
-//         const storedWishList = getStoredWishList();
-//         if(storedWishList.includes(id)){
-//             console.log("Already exist")
-//         }
-//         else{
-//             storedWishList.push(id)
-//     const storedWishListStr = JSON.stringify(storedWishList)
-//     localStorage.setItem('wish-list', storedWishListStr)
-//         }
-//     }
 
 
 
