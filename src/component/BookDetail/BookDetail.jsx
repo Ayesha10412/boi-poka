@@ -1,5 +1,6 @@
 import { useLoaderData, useParams } from 'react-router-dom';
 import { addToStoredReadList } from '../../Utility/AddToDb';
+import { Helmet } from 'react-helmet-async';
 
 const BookDetail = () => {
     const {bookId} = useParams()
@@ -25,6 +26,9 @@ addToStoredReadList(id);
 
     return (
         <div className='bg-slate-200 p-5 rounded-lg'>
+            <Helmet>
+                <title>Book Detail | { bookId}</title>
+            </Helmet>
             <h2>Book Id: {currentBookId}</h2>
             <div >
                 <img className='h-[300px]' src={image} alt="" />

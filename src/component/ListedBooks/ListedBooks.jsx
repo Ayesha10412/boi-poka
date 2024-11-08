@@ -4,6 +4,7 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import { getStoredReadList } from '../../Utility/AddToDb';
 import Book from '../Book/Book';
+import { Helmet } from 'react-helmet-async';
 
 const ListedBooks = () => {
 
@@ -39,6 +40,9 @@ setReadList(readBookList);
 
     return (
         <div>
+          <Helmet>
+            <title>Boi Poka | Listed Books</title>
+          </Helmet>
             <h2 className='my-8'>Listed Books</h2>
             <div className="dropdown">
                 <div tabIndex={0} role="button" className="btn m-1">
